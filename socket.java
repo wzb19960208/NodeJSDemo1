@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import javax.imageio.ImageIO;
 import java.awt.Image;
+import java.awt.image.RenderedImage;
 
 
 public class socket{
