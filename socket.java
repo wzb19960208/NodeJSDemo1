@@ -15,7 +15,7 @@ public class socket{
     public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ServerSocket serverSocket = new ServerSocket(6002);
-		Socket sc = new Socket("119.29.156.242","6003");
+		Socket sc = new Socket("119.29.156.242",6003);
 		System.out.println("服务器启动!");
 		Image image;
 		File file;
