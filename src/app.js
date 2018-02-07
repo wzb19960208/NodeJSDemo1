@@ -21,7 +21,7 @@ http.createServer((req,res)=>{
 
     if(path=='/test.png'){
 
-        fs.readFile('../test',(err,data)=>{
+        fs.readFile('../test.png',(err,data)=>{
 
             if(err){
                 console.error(err);
