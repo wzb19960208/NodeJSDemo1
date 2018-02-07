@@ -39,7 +39,7 @@ public class socket{
 					// }
 					// outputStream = new FileOutputStream(file);
 					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-					os = sc.getOutputStream()
+					os = sc.getOutputStream();
 					ImageIO.write((RenderedImage)image, "jpeg", os);
 					
 				}
@@ -47,6 +47,7 @@ public class socket{
 			}catch(Exception ex){
 				
 			}finally{
+				//每次要把socket关掉，连接的output也关掉
 				socket.close();
 				os.close();
 			}
