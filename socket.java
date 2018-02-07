@@ -22,7 +22,7 @@ public class socket{
 		File file;
 		FileOutputStream outputStream;
 		//OutputStream os;
-		os = sc.getOutputStream();
+		//os = sc.getOutputStream();
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
