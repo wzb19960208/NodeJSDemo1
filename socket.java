@@ -19,7 +19,9 @@ public class socket{
 	
 	// public synchronized void recvData() {
         
-    // }
+	// }
+	
+	public volatile int busy = 0;
 
 
 
@@ -33,7 +35,7 @@ public class socket{
 		FileOutputStream outputStream;
 		OutputStream os;
 		os = sc.getOutputStream();
-		volatile int busy = 0;
+		
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
