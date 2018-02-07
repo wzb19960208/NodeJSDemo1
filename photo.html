@@ -33,7 +33,7 @@
 	var ws = new WebSocket(wsUri);
 	ws.binaryType = 'blob';
 	
-	ws.onmessage(function(message){
+	ws.onmessage=function(message){
 
 		var blob = new Blob([message.data],{"type":"image\/png"});
         var src = window.URL.createObjectURL(blob);
@@ -44,7 +44,7 @@
         };
         document.body.appendChild(img);
 
-	});
+	};
 		
 </script>
 
