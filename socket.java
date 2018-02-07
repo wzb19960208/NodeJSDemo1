@@ -33,7 +33,7 @@ public class socket{
 		FileOutputStream outputStream;
 		OutputStream os;
 		os = sc.getOutputStream();
-		volatile busy = 0;
+		volatile int busy = 0;
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
