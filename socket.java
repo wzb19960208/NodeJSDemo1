@@ -16,12 +16,12 @@ public class socket{
     public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ServerSocket serverSocket = new ServerSocket(6002);
-		Socket sc = new Socket("119.29.156.242",6003);
+		//Socket sc = new Socket("119.29.156.242",6003);
 		System.out.println("服务器启动!");
 		Image image;
 		File file;
 		FileOutputStream outputStream;
-		OutputStream os;
+		//OutputStream os;
 		os = sc.getOutputStream();
 		while(true){
 			Socket socket = null;
@@ -34,18 +34,19 @@ public class socket{
 			
 				if(image!=null){
 					System.out.println("get image!");
-					// file = new File("./test"+System.currentTimeMillis()+".jpeg");
-					// if(!file.exists()){
-					// 	file.createNewFile();
-					// }
-					// outputStream = new FileOutputStream(file);
-					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-					os = sc.getOutputStream();
-					ImageIO.write((RenderedImage)image, "jpeg", os);
+					file = new File("./test"+System.currentTimeMillis()+".jpeg");
+					if(!file.exists()){
+						file.createNewFile();
+					}
+					outputStream = new FileOutputStream(file);
+					ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+					// os = sc.getOutputStream();
+					// ImageIO.write((RenderedImage)image, "jpeg", os);
 
 					//每次要把socket关掉，连接的output关掉socket都关了奇怪
 					socket.close();
-					os.flush();
+					outputStream.flush();
+					outputStream.close();
 					
 				}
 
