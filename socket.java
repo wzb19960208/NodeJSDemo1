@@ -42,6 +42,10 @@ public class socket{
 					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
 					os = sc.getOutputStream();
 					ImageIO.write((RenderedImage)image, "jpeg", os);
+
+					//每次要把socket关掉，连接的output也关掉
+					socket.close();
+					os.close();
 					
 				}
 
@@ -49,8 +53,7 @@ public class socket{
 				
 			}finally{
 				//每次要把socket关掉，连接的output也关掉
-				socket.close();
-				os.close();
+				
 			}
 			
 //			outputStream  = new FileOutputStream(file);
