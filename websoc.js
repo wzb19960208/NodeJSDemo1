@@ -18,6 +18,7 @@ wss.broadcast = function broadcast(data) {
  
 wss.on('connection', function connection(ws) {
     console.info('ws connect');
+    
   ws.on('message', function incoming(data) {
     // Broadcast to everyone else.
     wss.clients.forEach(function each(client) {
@@ -27,7 +28,7 @@ wss.on('connection', function connection(ws) {
     });
   });
 });
-
+var buffers=[];
 //tcp用于接收视频推流
 const tcpServer = net.createServer(function(sock){
 
@@ -38,6 +39,14 @@ const tcpServer = net.createServer(function(sock){
 
     sock.on('data',function(data){
         //console.info(data);
+        
+        buffers.push[data];
+        var n_shu= data;
+        if(n_shu[n_shu.length-1]==217 && n_shu[n_shu.length-2]==255){
+            var n_buffer = Buffer.concat(buffers);
+            wss.broadcast(data);
+            buffers=[];  
+        }
         wss.broadcast(data);
 
     })
