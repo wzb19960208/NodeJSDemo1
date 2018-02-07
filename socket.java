@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class socket{
 
-	public synchronized void sendData(Image image,OutputStream os) {
+	public static synchronized void sendData(Image image,OutputStream os) {
 		// File file = new File("./test"+System.currentTimeMillis()+".jpeg");
 		// if(!file.exists()){
 		// 	file.createNewFile();
