@@ -8,6 +8,8 @@ const tcpServer = net.createServer(function(sock){
     // 为'connection' 事件自动设置一个监听器。
     console.info(chalk.green(client+' connect!'));
 
+    console.info(sock);
+
 
     sock.on('close',function(){
         console.info(chalk.green(client+' disconnect!'));
@@ -16,6 +18,8 @@ const tcpServer = net.createServer(function(sock){
     sock.on('error',function(err){
         console.error(err);
     })
+
+    //每次拿到数据就用websocket转发
 
 
 }).listen(6002);
