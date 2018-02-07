@@ -12,7 +12,7 @@ http.createServer((req,res)=>{
     if(path=='/test.png'){
 
         
-
+        // 必须给图片添加新的响应方式，不然用src设置的图片根本找不到。
         fs.readFile('../test.png',(err,data)=>{
 
             if(err){
