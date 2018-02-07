@@ -15,6 +15,7 @@ public class socket{
     public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ServerSocket serverSocket = new ServerSocket(6002);
+		Socket socket = new Socket("119.29.156.242","6003");
 		System.out.println("服务器启动!");
 		Image image;
 		File file;
@@ -29,12 +30,14 @@ public class socket{
 			
 				if(image!=null){
 					System.out.println("get image!");
-					file = new File("./test"+System.currentTimeMillis()+".jpeg");
-					if(!file.exists()){
-						file.createNewFile();
-					}
-					outputStream = new FileOutputStream(file);
-	            	ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+					// file = new File("./test"+System.currentTimeMillis()+".jpeg");
+					// if(!file.exists()){
+					// 	file.createNewFile();
+					// }
+					// outputStream = new FileOutputStream(file);
+					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+					ImageIO.write((RenderedImage)image, "jpeg", socket.getOutputStream());
+					
 				}
 
 			}catch(Exception ex){
