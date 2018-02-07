@@ -22,11 +22,18 @@ public class socket{
 			Socket socket = null;
 			socket = serverSocket.accept();
 			System.out.println("new connection!");
-			image = ImageIO.read(socket.getInputStream());
+			try{
+
+				image = ImageIO.read(socket.getInputStream());
 			
-			if(image!=null){
-				System.out.println("get image!");
+				if(image!=null){
+					System.out.println("get image!");
+				}
+
+			}catch(Exception ex){
+				
 			}
+			
 //			outputStream  = new FileOutputStream(file);
 //			byte[] data = readInputStream(socket.getInputStream());
 //			outputStream.write(data);
