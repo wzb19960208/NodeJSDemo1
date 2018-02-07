@@ -13,6 +13,14 @@ import java.io.OutputStream;
 
 public class socket{
 
+	// public synchronized void sendData() {
+        
+	// }
+	
+	// public synchronized void recvData() {
+        
+    // }
+
 
 
     public static void main(String[] args) throws Exception {
@@ -25,6 +33,7 @@ public class socket{
 		FileOutputStream outputStream;
 		OutputStream os;
 		os = sc.getOutputStream();
+		volatile busy = 0;
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
@@ -35,12 +44,15 @@ public class socket{
 				image = ImageIO.read(socket.getInputStream());
 			
 				if(image!=null){
-					synchronized(this){
-						System.out.println("get image!");
-						file = new File("./test"+System.currentTimeMillis()+".jpeg");
-							if(!file.exists()){
-						file.createNewFile();
-					}
+
+					if(busy==0){
+						synchronized(busy){
+							if(busy==0){
+								System.out.println("get image!");
+					// 	file = new File("./test"+System.currentTimeMillis()+".jpeg");
+					// 		if(!file.exists()){
+					// 	file.createNewFile();
+					// }
 					// outputStream = new FileOutputStream(file);
 					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
 
@@ -52,8 +64,15 @@ public class socket{
 					socket.close();
 					outputStream.flush();
 					outputStream.close();
+					busy = 1;
 
+							}
+						}
 					}
+					
+						
+
+					
 					
 					
 				}
