@@ -20,12 +20,15 @@ public class socket{
 		Image image;
 		File file;
 		FileOutputStream outputStream;
+		outputStream os;
+
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
 			System.out.println("new connection!");
 			try{
 
+				
 				image = ImageIO.read(socket.getInputStream());
 			
 				if(image!=null){
@@ -36,12 +39,16 @@ public class socket{
 					// }
 					// outputStream = new FileOutputStream(file);
 					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-					ImageIO.write((RenderedImage)image, "jpeg", sc.getOutputStream());
+					os = sc.getOutputStream()
+					ImageIO.write((RenderedImage)image, "jpeg", os);
 					
 				}
 
 			}catch(Exception ex){
 				
+			}finally{
+				socket.close();
+				os.close();
 			}
 			
 //			outputStream  = new FileOutputStream(file);
