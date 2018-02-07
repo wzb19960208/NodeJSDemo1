@@ -33,7 +33,7 @@ public class socket{
 						file.createNewFile();
 					}
 					outputStream = new FileOutputStream(file);
-	            	ImageIO.write(image, "png", outputStream);
+	            	ImageIO.write((RenderedImage)image, "png", outputStream);
 				}
 
 			}catch(Exception ex){
