@@ -15,15 +15,16 @@ public class socket{
 
 	public static synchronized void sendData(Image image,OutputStream os) throws IOException{
 		// File file = new File("./test"+System.currentTimeMillis()+".jpeg");
-		// if(!file.exists()){
-		// 	file.createNewFile();
-		// 	}
-		// FileOutputStream outputStream = new FileOutputStream(file);
-		// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-		// outputStream.flush();
-		// outputStream.close();
+		File file = new File("./test.jpeg");
+		if(!file.exists()){
+			file.createNewFile();
+			}
+		FileOutputStream outputStream = new FileOutputStream(file);
+		ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+		outputStream.flush();
+		outputStream.close();
 
-		ImageIO.write((RenderedImage)image, "jpeg", os);
+		//ImageIO.write((RenderedImage)image, "jpeg", os);
 
         
 	}
