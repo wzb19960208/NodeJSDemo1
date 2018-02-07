@@ -22,7 +22,7 @@ public class socket{
 		File file;
 		FileOutputStream outputStream;
 		OutputStream os;
-
+		os = sc.getOutputStream();
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
@@ -43,9 +43,9 @@ public class socket{
 					os = sc.getOutputStream();
 					ImageIO.write((RenderedImage)image, "jpeg", os);
 
-					//每次要把socket关掉，连接的output也关掉
+					//每次要把socket关掉，连接的output关掉socket都关了奇怪
 					socket.close();
-					os.close();
+					os.flush();
 					
 				}
 
