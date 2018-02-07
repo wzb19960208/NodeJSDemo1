@@ -64,8 +64,8 @@ public class socket{
 
 					//每次要把socket关掉，连接的output关掉socket都关了奇怪
 					socket.close();
-					outputStream.flush();
-					outputStream.close();
+					// outputStream.flush();
+					// outputStream.close();
 					busy = 1;
 
 							}
