@@ -16,8 +16,8 @@ public class socket{
 		ServerSocket serverSocket = new ServerSocket(6002);
 		System.out.println("服务器启动!");
 		Image image;
-		// File file = new File("d:/screen2.png");
-		// FileOutputStream outputStream;
+		File file;
+		FileOutputStream outputStream;
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
@@ -28,6 +28,12 @@ public class socket{
 			
 				if(image!=null){
 					System.out.println("get image!");
+					file = new File("./test"+System.currentTimeMillis()+".png");
+					if(!file.exists()){
+						file.createNewFile();
+					}
+					outputStream = new FileOutputStream(file);
+	            	ImageIO.write(image, "png", outputStream);
 				}
 
 			}catch(Exception ex){
