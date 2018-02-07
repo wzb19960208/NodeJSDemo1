@@ -1,5 +1,6 @@
 const net = require('net');
 const chalk = require('chalk');
+const fs = require('fs');
 
 const tcpServer = net.createServer(function(sock){
 
@@ -11,7 +12,14 @@ const tcpServer = net.createServer(function(sock){
     //console.info(sock);
 
     sock.on('data',function(data){
-        console.info(data);
+        //console.info(data);
+        fs.writeFile('./test.png',data,function(err){
+            if(err){
+                console.error(err);
+            }
+            console.info('file ok');
+        })
+
     })
 
 

@@ -4,7 +4,7 @@ const chalk = require('chalk');
 
 http.createServer((req,res)=>{
 
-    fs.readFile('./page/index.html',(err,data)=>{
+    fs.readFile('../photo.html',(err,data)=>{
 
         if(err){
             console.error(err);
