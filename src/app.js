@@ -7,19 +7,11 @@ http.createServer((req,res)=>{
 
     let path = url.parse(req.url).pathname;
 
-    fs.readFile('../photo.html',(err,data)=>{
-
-        if(err){
-            console.error(err);
-        }
-
-        res.writeHead(200,{'Content-Type':'text/html'});
-        res.end(data);
-
-
-    });
+    console.info(path);
 
     if(path=='/test.png'){
+
+        
 
         fs.readFile('../test.png',(err,data)=>{
 
@@ -33,7 +25,25 @@ http.createServer((req,res)=>{
     
         });
 
+    }else{
+
+        fs.readFile('../photo.html',(err,data)=>{
+
+            if(err){
+                console.error(err);
+            }
+    
+            res.writeHead(200,{'Content-Type':'text/html'});
+            res.end(data);
+    
+    
+        });
+
     }
+
+    
+
+    
 
    
     
