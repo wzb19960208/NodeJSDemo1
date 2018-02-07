@@ -13,13 +13,13 @@ http.createServer((req,res)=>{
 
         
         // 必须给图片添加新的响应方式，不然用src设置的图片根本找不到。
-        fs.readFile('../test.png',(err,data)=>{
+        fs.readFile('../test.jpeg',(err,data)=>{
 
             if(err){
                 console.error(err);
             }
     
-            res.writeHead(200,{'Content-Type':'image/png'});
+            res.writeHead(200,{'Content-Type':'image/jpeg'});
             res.end(data);
     
     
