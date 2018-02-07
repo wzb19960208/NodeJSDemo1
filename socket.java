@@ -21,7 +21,7 @@ public class socket{
         
 	// }
 	
-	public volatile int busy = 0;
+	public static volatile int busy = 0;
 
 
 
