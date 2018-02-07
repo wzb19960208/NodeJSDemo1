@@ -1,8 +1,11 @@
 const http = require('http');
 const fs = require('fs');
 const chalk = require('chalk');
+const url = require("url");
 
 http.createServer((req,res)=>{
+
+    let path = url.parse(req.url).pathname;
 
     fs.readFile('../photo.html',(err,data)=>{
 
@@ -16,7 +19,7 @@ http.createServer((req,res)=>{
 
     });
 
-    if(req.url=='test.png'){
+    if(path=='/test.png'){
 
         fs.readFile('../test',(err,data)=>{
 
