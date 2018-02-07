@@ -1,5 +1,4 @@
 const net = require('net');
-const Transcoder = require('stream-transcoder');
 const chalk = require('chalk');
 const http = require('http');
 const fs = require('fs');
