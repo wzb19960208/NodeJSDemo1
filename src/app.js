@@ -16,6 +16,22 @@ http.createServer((req,res)=>{
 
     });
 
+    if(req.url=='test.png'){
+
+        fs.readFile('../test',(err,data)=>{
+
+            if(err){
+                console.error(err);
+            }
+    
+            res.writeHead(200,{'Content-Type':'image/png'});
+            res.end(data);
+    
+    
+        });
+
+    }
+
    
     
 
