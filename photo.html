@@ -18,7 +18,7 @@
 <body>
 
 	<!-- 服务器上这样写路径是不对的 -->
-		<img style="border: 2px red solid;height: 171px;width: 100px;" id="img" src='test.jpeg'/>
+		<img style="border: 2px red solid;height: 171px;width: 100px;" id="img" src='../test.jpeg'/>
 	
 	
 </body>
@@ -26,7 +26,7 @@
 <script type="text/javascript">
 	var oImg = document.getElementById("img");
   	setInterval(function(){
-  		oImg.src = 'test.jepg?time='+Math.random();
+  		oImg.src = '../test.jepg?time='+Math.random();
   		//alert("1");
 	  },500);	
 	// var wsUri ="ws://119.29.156.242:8080";
