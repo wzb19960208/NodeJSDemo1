@@ -9,7 +9,7 @@ http.createServer((req,res)=>{
 
     console.info(path);
 
-    if(path=='/test.png'){
+    if(path=='/test.jpeg'){
 
         
         // 必须给图片添加新的响应方式，不然用src设置的图片根本找不到。
