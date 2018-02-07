@@ -18,17 +18,34 @@
 <body>
 
 	<!-- 服务器上这样写路径是不对的 -->
-		<img style="border: 2px red solid;height: 576px;width: 324px;" id="test1" src='test.png'/>
+		<!-- <img style="border: 2px red solid;height: 576px;width: 324px;" id="test1" src='test.png'/> -->
 	
 	
 </body>
 
 <script type="text/javascript">
-	var oImg = document.getElementById("test1");
-  	setInterval(function(){
-  		oImg.src = 'test.png?time='+Math.random();
-  		//alert("1");
-  	},500);		
+	// var oImg = document.getElementById("test1");
+  	// setInterval(function(){
+  	// 	oImg.src = 'test.png?time='+Math.random();
+  	// 	//alert("1");
+	  // },500);	
+	var wsUri ="ws://119.29.156.242:8080";
+	var ws = new WebSocket(wsUri);
+	ws.binaryType = 'blob';
+	
+	ws.onmessage(function(message){
+
+		var blob = new Blob([message.data],{"type":"image\/png"});
+        var src = window.URL.createObjectURL(blob);
+        var img = document.createElement('img');
+        img.src = src;
+        img.onload = function(){
+            window.URL.revokeObjectURL(src);
+        };
+        document.body.appendChild(img);
+
+	});
+		
 </script>
 
 </html>

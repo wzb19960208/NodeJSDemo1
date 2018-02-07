@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="//cdn.bootcss.com/socket.io/1.7.3/socket.io.js"></script>
+    <script>
+        var socket = io.connect();
+        socket.on('news',function(data){
+            var blob = new Blob([data.shuju],{"type":"image\/jpeg"});
+            var src = window.URL.createObjectURL(blob);
+            var img = document.createElement('img');
+            img.src = src;
+            img.onload = function(){
+                window.URL.revokeObjectURL(src);
+            };
+            document.body.appendChild(img);
+        });
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
