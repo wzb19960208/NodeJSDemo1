@@ -13,15 +13,26 @@ import java.io.OutputStream;
 
 public class socket{
 
-	// public synchronized void sendData() {
+	public synchronized void sendData(Image image,OutputStream os) {
+		// File file = new File("./test"+System.currentTimeMillis()+".jpeg");
+		// if(!file.exists()){
+		// 	file.createNewFile();
+		// 	}
+		// FileOutputStream outputStream = new FileOutputStream(file);
+		// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+		// outputStream.flush();
+		// outputStream.close();
+
+		ImageIO.write((RenderedImage)image, "jpeg", os);
+
         
-	// }
+	}
 	
-	// public synchronized void recvData() {
+	public synchronized void recvData() {
         
-	// }
+	}
 	
-	public static volatile Integer busy = 0;
+	
 
 
 
@@ -32,7 +43,7 @@ public class socket{
 		System.out.println("服务器启动!");
 		Image image;
 		File file;
-		FileOutputStream outputStream;
+		//FileOutputStream outputStream;
 		OutputStream os;
 		os = sc.getOutputStream();
 		
@@ -47,36 +58,22 @@ public class socket{
 			
 				if(image!=null){
 
-					if(busy==0){
-						synchronized(busy){
-							if(busy==0){
-								System.out.println("get image!");
-					// 	file = new File("./test"+System.currentTimeMillis()+".jpeg");
-					// 		if(!file.exists()){
-					// 	file.createNewFile();
-					// }
-					// outputStream = new FileOutputStream(file);
-					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+					
+						
+							
+					System.out.println("get image!");
+					
+					sendData(image,os);
 
 					//开太多流同时传过去，会导致数据混乱，要保证同步，保证同时只有一个流传输东西
-					busy = 1;
-					os = sc.getOutputStream();
-					ImageIO.write((RenderedImage)image, "jpeg", os);
+					
+					// os = sc.getOutputStream();
+					// ImageIO.write((RenderedImage)image, "jpeg", os);
 
 					//每次要把socket关掉，连接的output关掉socket都关了奇怪
 					socket.close();
-					// outputStream.flush();
-					// outputStream.close();
-					busy = 0;
-
-							}
-						}
-					}
 					
-						
-
-					
-					
+	
 					
 				}
 
