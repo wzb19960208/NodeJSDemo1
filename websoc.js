@@ -40,13 +40,6 @@ const tcpServer = net.createServer(function(sock){
     sock.on('data',function(data){
         //console.info(data);
         
-        buffers.push[data];
-        var n_shu= data;
-        if(n_shu[n_shu.length-1]==217 && n_shu[n_shu.length-2]==255){
-            var n_buffer = Buffer.concat(buffers);
-            wss.broadcast(data);
-            buffers=[];  
-        }
         wss.broadcast(data);
 
     })
