@@ -20,7 +20,7 @@ public class socket{
 		Image image;
 		File file;
 		FileOutputStream outputStream;
-		outputStream os;
+		OutputStream os;
 
 		while(true){
 			Socket socket = null;
