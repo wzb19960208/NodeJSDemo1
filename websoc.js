@@ -17,6 +17,7 @@ wss.broadcast = function broadcast(data) {
 };
  
 wss.on('connection', function connection(ws) {
+    console.info('ws connect');
   ws.on('message', function incoming(data) {
     // Broadcast to everyone else.
     wss.clients.forEach(function each(client) {
