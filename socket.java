@@ -13,16 +13,18 @@ import java.io.OutputStream;
 
 public class socket{
 
+
+
     public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ServerSocket serverSocket = new ServerSocket(6002);
-		//Socket sc = new Socket("119.29.156.242",6003);
+		Socket sc = new Socket("119.29.156.242",6003);
 		System.out.println("服务器启动!");
 		Image image;
 		File file;
 		FileOutputStream outputStream;
-		//OutputStream os;
-		//os = sc.getOutputStream();
+		OutputStream os;
+		os = sc.getOutputStream();
 		while(true){
 			Socket socket = null;
 			socket = serverSocket.accept();
@@ -33,20 +35,26 @@ public class socket{
 				image = ImageIO.read(socket.getInputStream());
 			
 				if(image!=null){
-					System.out.println("get image!");
-					file = new File("./test"+System.currentTimeMillis()+".jpeg");
-					if(!file.exists()){
+					synchronized(this){
+						System.out.println("get image!");
+						file = new File("./test"+System.currentTimeMillis()+".jpeg");
+							if(!file.exists()){
 						file.createNewFile();
 					}
-					outputStream = new FileOutputStream(file);
-					ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-					// os = sc.getOutputStream();
-					// ImageIO.write((RenderedImage)image, "jpeg", os);
+					// outputStream = new FileOutputStream(file);
+					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
+
+					//开太多流同时传过去，会导致数据混乱，要保证同步，保证同时只有一个流传输东西
+					os = sc.getOutputStream();
+					ImageIO.write((RenderedImage)image, "jpeg", os);
 
 					//每次要把socket关掉，连接的output关掉socket都关了奇怪
 					socket.close();
 					outputStream.flush();
 					outputStream.close();
+
+					}
+					
 					
 				}
 
