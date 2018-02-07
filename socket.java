@@ -8,6 +8,7 @@ import java.net.Socket;
 import javax.imageio.ImageIO;
 import java.awt.Image;
 import java.awt.image.RenderedImage;
+import java.io.OutputStream;
 
 
 public class socket{
