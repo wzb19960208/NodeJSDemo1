@@ -59,6 +59,7 @@ public class socket{
 					// ImageIO.write((RenderedImage)image, "jpeg", outputStream);
 
 					//开太多流同时传过去，会导致数据混乱，要保证同步，保证同时只有一个流传输东西
+					busy = 1;
 					os = sc.getOutputStream();
 					ImageIO.write((RenderedImage)image, "jpeg", os);
 
@@ -66,7 +67,7 @@ public class socket{
 					socket.close();
 					// outputStream.flush();
 					// outputStream.close();
-					busy = 1;
+					busy = 0;
 
 							}
 						}
