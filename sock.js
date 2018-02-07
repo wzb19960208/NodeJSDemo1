@@ -8,7 +8,11 @@ const tcpServer = net.createServer(function(sock){
     // 为'connection' 事件自动设置一个监听器。
     console.info(chalk.green(client+' connect!'));
 
-    console.info(sock);
+    //console.info(sock);
+
+    sock.on('data',function(){
+        console.info(data);
+    })
 
 
     sock.on('close',function(){
