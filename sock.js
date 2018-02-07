@@ -10,7 +10,7 @@ const tcpServer = net.createServer(function(sock){
 
     //console.info(sock);
 
-    sock.on('data',function(){
+    sock.on('data',function(data){
         console.info(data);
     })
 
