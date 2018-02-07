@@ -18,7 +18,7 @@
 <body>
 
 	<!-- 服务器上这样写路径是不对的 -->
-		<img style="border: 2px red solid;height: 576px;width: 324px;" id="img" src='test.png'/>
+		<!-- <img style="border: 2px red solid;height: 576px;width: 324px;" id="img" src='test.png'/> -->
 	
 	
 </body>
@@ -35,14 +35,16 @@
 	
 	ws.onmessage=function(message){
 
-		var blob = new Blob([message.data],{"type":"image\/jpge"});
+		var blob = new Blob([message.data],{"type":"image\/jpeg"});
         var src = window.URL.createObjectURL(blob);
-        var img = document.getElementById('img');
-        img.src = src;
-        // img.onload = function(){
-        //     window.URL.revokeObjectURL(src);
-        // };
-        // document.body.appendChild(img);
+        var img = document.createElement('img');
+		img.src = src;
+		img.width=324;
+		img.height=576;
+        img.onload = function(){
+            window.URL.revokeObjectURL(src);
+        };
+        document.body.appendChild(img);
 
 	};
 		

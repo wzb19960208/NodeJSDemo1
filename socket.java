@@ -29,12 +29,12 @@ public class socket{
 			
 				if(image!=null){
 					System.out.println("get image!");
-					file = new File("./test"+System.currentTimeMillis()+".png");
+					file = new File("./test"+System.currentTimeMillis()+".jpeg");
 					if(!file.exists()){
 						file.createNewFile();
 					}
 					outputStream = new FileOutputStream(file);
-	            	ImageIO.write((RenderedImage)image, "png", outputStream);
+	            	ImageIO.write((RenderedImage)image, "jpeg", outputStream);
 				}
 
 			}catch(Exception ex){
