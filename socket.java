@@ -13,15 +13,12 @@ import java.io.OutputStream;
 
 public class socket{
 
-	public static synchronized void sendData(Image image) throws IOException{
+	public static synchronized void sendData(Image image,File file) throws IOException{
 		// File file = new File("./test"+System.currentTimeMillis()+".jpeg");
-		File file = new File("./test.jpeg");
-		if(!file.exists()){
-			file.createNewFile();
-			}
+		
 		FileOutputStream outputStream = new FileOutputStream(file);
 		ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-		outputStream.flush();
+		//outputStream.flush();
 		outputStream.close();
 
 		//ImageIO.write((RenderedImage)image, "jpeg", os);
@@ -43,7 +40,10 @@ public class socket{
 		//Socket sc = new Socket("119.29.156.242",6003);
 		System.out.println("服务器启动!");
 		Image image;
-		File file;
+		File file = new File("./test.jpeg");
+		if(!file.exists()){
+			file.createNewFile();
+			}
 		//FileOutputStream outputStream;
 		//OutputStream os;
 		//os = sc.getOutputStream();
@@ -64,7 +64,7 @@ public class socket{
 							
 					System.out.println("get image!");
 					
-					sendData(image);
+					sendData(image,file);
 
 					//开太多流同时传过去，会导致数据混乱，要保证同步，保证同时只有一个流传输东西
 					
