@@ -18,7 +18,7 @@ public class socket{
 		
 		FileOutputStream outputStream = new FileOutputStream(file);
 		ImageIO.write((RenderedImage)image, "jpeg", outputStream);
-		//outputStream.flush();
+		outputStream.flush();
 		outputStream.close();
 
 		//ImageIO.write((RenderedImage)image, "jpeg", os);
