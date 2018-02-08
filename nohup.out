@@ -1,0 +1,195 @@
+Server started!
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/test.jpeg
+{ Error: ENOENT: no such file or directory, open '../test.jpeg'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../test.jpeg' }
+/
+{ Error: ENOENT: no such file or directory, open '../photo.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../photo.html' }
+/favicon.ico
+{ Error: ENOENT: no such file or directory, open '../photo.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../photo.html' }
+/
+{ Error: ENOENT: no such file or directory, open '../photo.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../photo.html' }
+/favicon.ico
+{ Error: ENOENT: no such file or directory, open '../photo.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '../photo.html' }
+module.js:538
+    throw err;
+    ^
+
+Error: Cannot find module '/root/wzb/project/NodeJSDemo1/app.js'
+    at Function.Module._resolveFilename (module.js:536:15)
+    at Function.Module._load (module.js:466:25)
+    at Function.Module.runMain (module.js:676:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
+module.js:538
+    throw err;
+    ^
+
+Error: Cannot find module '/root/wzb/project/NodeJSDemo1/app.js'
+    at Function.Module._resolveFilename (module.js:536:15)
+    at Function.Module._load (module.js:466:25)
+    at Function.Module.runMain (module.js:676:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
