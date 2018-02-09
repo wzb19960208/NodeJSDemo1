@@ -14,7 +14,7 @@ import java.io.OutputStream;
 public class socket{
 
 	public static synchronized void sendData(Image image,File file) throws IOException{
-		File file = new File("./test"+System.currentTimeMillis()+".jpeg");
+		file = new File("./test"+System.currentTimeMillis()+".jpeg");
 		if(!file.exists()){
 			file.createNewFile();
 			}
