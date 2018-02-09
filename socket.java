@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class socket{
 
-	public static synchronized void sendData(Image image) throws IOException{
+	public static synchronized void sendData(Image image,File file) throws IOException{
 		File file = new File("./test"+System.currentTimeMillis()+".jpeg");
 		if(!file.exists()){
 			file.createNewFile();
@@ -67,7 +67,7 @@ public class socket{
 							
 					System.out.println("get image!");
 					
-					sendData(image);
+					sendData(image,file);
 
 					//开太多流同时传过去，会导致数据混乱，要保证同步，保证同时只有一个流传输东西
 					
