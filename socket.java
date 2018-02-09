@@ -13,11 +13,11 @@ import java.io.OutputStream;
 
 public class socket{
 
-	public static synchronized void sendData(Image image,File file) throws IOException{
-		file = new File("./test"+System.currentTimeMillis()+".jpeg");
-		if(!file.exists()){
-			file.createNewFile();
-			}
+	public static  void sendData(Image image,File file) throws IOException{
+		// file = new File("./test"+System.currentTimeMillis()+".jpeg");
+		// if(!file.exists()){
+		// 	file.createNewFile();
+		// 	}
 		
 		FileOutputStream outputStream = new FileOutputStream(file);
 		ImageIO.write((RenderedImage)image, "jpeg", outputStream);
@@ -40,7 +40,7 @@ public class socket{
     public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ServerSocket serverSocket = new ServerSocket(6002);
-		//Socket sc = new Socket("119.29.156.242",6003);
+		Socket sc = new Socket("119.29.156.242",6003);
 		System.out.println("服务器启动!");
 		Image image;
 		File file = new File("./test.jpeg");
